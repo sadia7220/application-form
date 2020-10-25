@@ -19,7 +19,8 @@ class FormController extends Controller
     {
         try{
             $forms=Form::all();
-            return response()->json($forms,200);
+            //return response()->json($forms,200);
+            return view('layouts.form.applicationFormList', compact('forms'));
         }
         catch (Exception $ex) {
             $exception = $ex->getMessage();
@@ -34,7 +35,7 @@ class FormController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.form.addApplicationForm');
     }
 
     /**
@@ -53,15 +54,19 @@ class FormController extends Controller
             ];
             $validator = Validator::make($request->all(),$rules); 
             if($validator->fails()){
-                return response()->json($validator->errors(),400); 
-                //return redirect()->back()->withErrors($validator);
+                //return response()->json($validator->errors(),400); 
+                return redirect()->back()->withErrors($validator);
             }
             $form = Form::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
             ]);
-            return response()->json(["success" => "The application form has been submitted successfully!","form"=>$form],201);
+            //return response()->json(["success" => "The application form has been submitted successfully!","form"=>$form],201);
+
+            if($form !== 'null') return redirect()->route('create_applicationForm')->with('success', 'The application form has been submitted successfully!');
+            else return redirect()->route('create_applicationForm')->with('error', 'The application form can not be added!');
+        
         }
         catch (Exception $ex) {
             $exception = $ex->getMessage();

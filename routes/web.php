@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::post('/application_management/forms/store','FormController@store')->name('store_applicationForm');
+Route::get('/application_management/forms/create','FormController@create')->name('create_applicationForm');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/application_management/forms','FormController@index')->name('view_applicationFormList');
+});
