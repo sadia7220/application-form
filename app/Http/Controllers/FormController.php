@@ -28,8 +28,8 @@ class FormController extends Controller
     public function index()
     {
         try{
+            // Show the form list.
             $forms=Form::all();
-            //return response()->json($forms,200);
             return view('layouts.form.applicationFormList', compact('forms'));
         }
         catch (Exception $ex) {
@@ -57,26 +57,29 @@ class FormController extends Controller
     public function store(Request $request)
     {
         try{
+            //Set rules for validation of fields.
             $rules = [                                             
                 'name' => 'required|min:3|max:100',
                 'email' => 'required|email|max:100',
                 'phone' => 'required|digits:11',
             ];
+
+             // Show error message(s) if validation fails.
             $validator = Validator::make($request->all(),$rules); 
             if($validator->fails()){
-                //return response()->json($validator->errors(),400); 
-                return redirect()->back()->withErrors($validator);
+                return redirect()->back()->withErrors($validator)->withInput();
             }
+
+            // Create form.
             $form = Form::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
             ]);
-            //return response()->json(["success" => "The application form has been submitted successfully!","form"=>$form],201);
-
+            
+            // Return the success or error message for saving form data.
             if($form !== 'null') return redirect()->route('create_applicationForm')->with('success', 'The application form has been submitted successfully!');
             else return redirect()->route('create_applicationForm')->with('error', 'The application form can not be added!');
-        
         }
         catch (Exception $ex) {
             $exception = $ex->getMessage();
