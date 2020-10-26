@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'back-history-prevent'],function(){
+    
 Route::get('/', function () {
-    return view('layouts.dashboard');
+    return redirect()->route('dashboard');
 });
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Auth::routes();
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::post('/application_management/forms/store','FormController@store')->name('store_applicationForm');
 Route::get('/application_management/forms/create','FormController@create')->name('create_applicationForm');
@@ -25,4 +30,5 @@ Route::get('/application_management/forms/create','FormController@create')->name
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/application_management/forms','FormController@index')->name('view_applicationFormList');
+});
 });

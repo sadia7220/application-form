@@ -23,9 +23,6 @@
         h3 {
             text-align: center;
         }
-        body {
-            text-align: center;
-        }
         input[type=text], select {
             width: 100%;
             padding: 12px 20px;
