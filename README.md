@@ -1,61 +1,49 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## A Basic Application Form Using Laravel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This is a basic application form where guest users are able to submit applications by providing his/her name, email and phone information. Admin/authenticated users can view the list of all the applications submitted by the guest users after logged in their account. 
+(In this version a guest user can submit multiple applictions as nothing about the restrictions was mentioned in the requirements.)
 
-## About Laravel
+##
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel Framework v7.28.4
+PHP v7.4.9 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Usage
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Step 1: Clone the repository. 
+    git clone https://github.com/sadia7220/application-form.git
 
-## Learning Laravel
+Step 2: Go into the application-form directory.
+    cd application-form
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Step 3: Copy .env.example file to .env .
+    cp .env.example .env
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Step 4: Add database information in "DB_DATABASE", "DB_USERNAME" and "DB_PASSWORD" variables of .env file.
 
-## Laravel Sponsors
+Step 5: Install all the app dependencies.
+    composer install
+    composer dumpautoload -o
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Step 6: Generate the application key which will be auto updated in .env file.
+    php artisan key:generate
 
-### Premium Partners
+Step 7: Clear the configuration cache.
+    php artisan config:cache
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+Step 8: Migrate database along with seeder (as it has seeded data of registered user).
+    php artisan migrate --seed
 
-## Contributing
+Step 9: Start the server
+    php artisan serve
+(If in other port, not in port=8000 then run the command below with port number. For example, for port number 8088)
+    php artisan serve --port=8088
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Step 10: Launch the main URL http://127.0.0.1:8000/ in browser. 
+(or for port number 8088 the URL will be http://127.0.0.1:8088/)  
 
-## Code of Conduct
+Step 11: For login use the credentials given below.
+    E-Mail Address: admin@gmail.com
+    Password: 12345678
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
