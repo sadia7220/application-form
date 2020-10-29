@@ -61,17 +61,17 @@ Step 9: Start the server
 php artisan serve
 ```
 
-(If in other port, not in port=8000 then run the command below with port number. For example, for port number 8088)
+(or in case of starting the server in different port, run the command below with port number. For example, for port number 8088)
 
 ```shell script
 php artisan serve --port=8088
 ```
 
-Step 10: Launch the main URL http://127.0.0.1:8000/ in browser. 
+Step 10: Launch the main URL http://127.0.0.1:8000/ in browser.<br> 
 (or for port number 8088 the URL will be http://127.0.0.1:8088/)  
 
 Step 11: For login use the credentials given below.<br><br>
-E-Mail Address: admin@gmail.com<br><br>
+E-Mail Address: admin@gmail.com<br>
 Password: 12345678
 
 
