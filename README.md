@@ -5,7 +5,7 @@ This is a basic application form where guest users are able to submit applicatio
 
 ## Versions Used
 
-Laravel Framework v7.28.4
+Laravel Framework v7.28.4<br>
 PHP v7.4.9 
 
 ## Usage
