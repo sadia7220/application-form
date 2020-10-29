@@ -12,66 +12,66 @@ PHP v7.4.9
 
 Step 1: Clone the repository.
 
-    ```shell script
-    git clone https://github.com/sadia7220/application-form.git
-    ```
+```shell script
+git clone https://github.com/sadia7220/application-form.git
+```
 
 Step 2: Go into the application-form directory.
 
-    ```shell script
-    cd application-form
-    ```
+```shell script
+cd application-form
+```
 
 Step 3: Copy .env.example file to .env .
 
-    ```shell script
-    cp .env.example .env
-    ```
+```shell script
+cp .env.example .env
+```
 
 Step 4: Add database information in "DB_DATABASE", "DB_USERNAME" and "DB_PASSWORD" variables of .env file.
 
 Step 5: Install all the app dependencies.
 
-    ```shell script
-    composer install
-    composer dumpautoload -o
-    ```
+```shell script
+composer install
+composer dumpautoload -o
+```
 
 Step 6: Generate the application key which will be auto updated in .env file.
 
-    ```shell script
-    php artisan key:generate
-    ```
+```shell script
+php artisan key:generate
+```
 
 Step 7: Clear the configuration cache.
 
-    ```shell script
-    php artisan config:cache
-    ```
+```shell script
+php artisan config:cache
+```
 
 Step 8: Migrate database along with seeder (as it has seeded data of registered user).
 
-    ```shell script
-    php artisan migrate --seed
-    ```
+```shell script
+php artisan migrate --seed
+```
 
 Step 9: Start the server
 
-    ```shell script
-    php artisan serve
-    ```
+```shell script
+php artisan serve
+```
 
 (If in other port, not in port=8000 then run the command below with port number. For example, for port number 8088)
 
-    ```shell script
-    php artisan serve --port=8088
-    ```
+```shell script
+php artisan serve --port=8088
+```
 
 Step 10: Launch the main URL http://127.0.0.1:8000/ in browser. 
 (or for port number 8088 the URL will be http://127.0.0.1:8088/)  
 
-Step 11: For login use the credentials given below.
-    E-Mail Address: admin@gmail.com
-    Password: 12345678
+Step 11: For login use the credentials given below.<br><br>
+E-Mail Address: admin@gmail.com<br><br>
+Password: 12345678
 
 
