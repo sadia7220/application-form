@@ -69,10 +69,10 @@ php artisan serve
 php artisan serve --port=8088
 ```
 
-Step 10: Launch the main URL http://127.0.0.1:8000/ in browser.<br> 
+Step 11: Launch the main URL http://127.0.0.1:8000/ in browser.<br> 
 (or for port number 8088 the URL will be http://127.0.0.1:8088/)  
 
-Step 11: For login use the credentials given below.<br><br>
+Step 12: For login use the credentials given below.<br><br>
 E-Mail Address: admin@gmail.com<br>
 Password: 12345678
 
