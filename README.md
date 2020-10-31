@@ -49,19 +49,21 @@ Step 7: Clear the configuration cache.
 php artisan config:cache
 ```
 
-Step 8: Migrate database along with seeder (as it has seeded data of registered user).
+Step 8: Start the server(WampServer\XAMPP) and check if all the services of the server is running.
+
+Step 9: Migrate database along with seeder (as it has seeded data of registered user).
 
 ```shell script
 php artisan migrate --seed
 ```
 
-Step 9: Start the server
+Step 10: Start the laravel development server
 
 ```shell script
 php artisan serve
 ```
 
-(or in case of starting the server in different port, run the command below with port number. For example, for port number 8088)
+(or in case of starting the development server in different port, run the command below with port number. For example, for port number 8088)
 
 ```shell script
 php artisan serve --port=8088
